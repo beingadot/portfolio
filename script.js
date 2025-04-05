@@ -1,5 +1,5 @@
 // Preloader
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
     preloader.style.opacity = '0';
     setTimeout(() => {
@@ -14,7 +14,7 @@ const cursorFollower = document.querySelector('.cursor-follower');
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
-    
+
     setTimeout(() => {
         cursorFollower.style.left = e.clientX + 'px';
         cursorFollower.style.top = e.clientY + 'px';
@@ -28,7 +28,7 @@ hoverElements.forEach(el => {
         cursor.classList.add('active');
         cursorFollower.classList.add('active');
     });
-    
+
     el.addEventListener('mouseleave', () => {
         cursor.classList.remove('active');
         cursorFollower.classList.remove('active');
@@ -82,13 +82,11 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterBtns.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         btn.classList.add('active');
-        
+
         const filterValue = btn.getAttribute('data-filter');
-        
+
         portfolioItems.forEach(item => {
             if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                 item.style.display = 'block';
@@ -115,11 +113,11 @@ viewBtns.forEach(btn => {
         const imgSrc = portfolioItem.querySelector('img').getAttribute('src');
         const title = portfolioItem.querySelector('h3').textContent;
         const description = portfolioItem.querySelector('p').textContent;
-        
+
         lightboxImg.setAttribute('src', imgSrc);
         lightboxTitle.textContent = title;
         lightboxDescription.textContent = description;
-        
+
         lightboxImg.style.display = 'block';
         lightboxVideo.style.display = 'none';
         lightbox.classList.add('active');
@@ -150,7 +148,7 @@ playButtons.forEach((btn, index) => {
         const video = reelVideos[index];
         const title = btn.closest('.reel-item').querySelector('h3').textContent;
         const description = btn.closest('.reel-item').querySelector('p').textContent;
-        
+
         if (video.paused) {
             video.play();
             btn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -168,13 +166,10 @@ const sliderDots = document.querySelectorAll('.slider-dot');
 sliderDots.forEach(dot => {
     dot.addEventListener('click', () => {
         const slideIndex = dot.getAttribute('data-slide');
-        
-        // Hide all slides
+
         testimonialSlides.forEach(slide => slide.classList.remove('active'));
-        // Show selected slide
         testimonialSlides[slideIndex].classList.add('active');
-        
-        // Update active dot
+
         sliderDots.forEach(d => d.classList.remove('active'));
         dot.classList.add('active');
     });
@@ -185,9 +180,9 @@ let currentSlide = 0;
 function rotateTestimonials() {
     testimonialSlides.forEach(slide => slide.classList.remove('active'));
     sliderDots.forEach(dot => dot.classList.remove('active'));
-    
+
     currentSlide = (currentSlide + 1) % testimonialSlides.length;
-    
+
     testimonialSlides[currentSlide].classList.add('active');
     sliderDots[currentSlide].classList.add('active');
 }
@@ -213,12 +208,12 @@ scrollTop.addEventListener('click', () => {
 
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({
@@ -245,13 +240,13 @@ const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value;
-    
+
     let whatsappMessage = `Hi Being A Dot,\n\nI'm interested in your design services.\n\n`;
     whatsappMessage += `*Name:* ${name}\n`;
     whatsappMessage += `*Email:* ${email}\n`;
@@ -259,13 +254,15 @@ contactForm.addEventListener('submit', (e) => {
     whatsappMessage += `*Service Needed:* ${service}\n`;
     whatsappMessage += `*Project Details:* ${message}\n\n`;
     whatsappMessage += `Please let me know about availability and pricing.`;
-    
+
     const encodedMessage = encodeURIComponent(whatsappMessage);
+
     window.open(`https://wa.me/917564024877?text=${encodedMessage}`, '_blank');
+
     contactForm.reset();
 });
 
-// Animate Stats Counter (Updated)
+// Animate Stats Counter
 const statNumbers = document.querySelectorAll('.stat-number');
 
 function animateStats() {
@@ -281,7 +278,11 @@ function animateStats() {
                 stat.textContent = Math.floor(current);
                 requestAnimationFrame(updateCount);
             } else {
-                if (target === 3) {
+                if (target === 150) {
+                    stat.textContent = '238+';
+                } else if (target === 50) {
+                    stat.textContent = '78+';
+                } else if (target === 3) {
                     stat.textContent = '4+';
                 } else {
                     stat.textContent = `${target}+`;
@@ -301,8 +302,8 @@ AOS.init({
     mirror: false
 });
 
-// Initialize Particles.js + Stats Observer
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize Particles.js
+document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             particles: {
@@ -411,7 +412,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Trigger stats animation when about section is visible
     const statsSection = document.querySelector('.about');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
