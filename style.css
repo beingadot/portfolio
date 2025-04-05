@@ -900,7 +900,7 @@ header.scrolled {
     border-color: var(--accent-gold);
 }
 
-.stat-number {
+.stat-num {
     font-size: 2rem;
     font-weight: 700;
     color: var(--accent-gold);
