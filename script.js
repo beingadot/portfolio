@@ -158,16 +158,6 @@ playButtons.forEach((btn, index) => {
             video.pause();
             btn.innerHTML = '<i class="fas fa-play"></i>';
         }
-        
-        // For lightbox view (optional)
-        // lightboxVideo.innerHTML = `<source src="${video.querySelector('source').getAttribute('src')}" type="video/mp4">`;
-        // lightboxTitle.textContent = title;
-        // lightboxDescription.textContent = description;
-        // lightboxImg.style.display = 'none';
-        // lightboxVideo.style.display = 'block';
-        // lightbox.classList.add('active');
-        // document.body.style.overflow = 'hidden';
-        // lightboxVideo.play();
     });
 });
 
@@ -201,7 +191,6 @@ function rotateTestimonials() {
     testimonialSlides[currentSlide].classList.add('active');
     sliderDots[currentSlide].classList.add('active');
 }
-
 setInterval(rotateTestimonials, 5000);
 
 // Scroll To Top
@@ -257,14 +246,12 @@ const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value;
     
-    // Create WhatsApp message
     let whatsappMessage = `Hi Being A Dot,\n\nI'm interested in your design services.\n\n`;
     whatsappMessage += `*Name:* ${name}\n`;
     whatsappMessage += `*Email:* ${email}\n`;
@@ -273,17 +260,12 @@ contactForm.addEventListener('submit', (e) => {
     whatsappMessage += `*Project Details:* ${message}\n\n`;
     whatsappMessage += `Please let me know about availability and pricing.`;
     
-    // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    
-    // Redirect to WhatsApp with pre-filled message
     window.open(`https://wa.me/917564024877?text=${encodedMessage}`, '_blank');
-    
-    // Reset form
     contactForm.reset();
 });
 
-// Animate Stats Counter
+// Animate Stats Counter (Updated)
 const statNumbers = document.querySelectorAll('.stat-number');
 
 function animateStats() {
@@ -292,17 +274,21 @@ function animateStats() {
         const duration = 2000;
         const step = target / (duration / 16);
         let current = 0;
-        
+
         const updateCount = () => {
             current += step;
             if (current < target) {
                 stat.textContent = Math.floor(current);
                 requestAnimationFrame(updateCount);
             } else {
-                stat.textContent = target;
+                if (target === 3) {
+                    stat.textContent = '4+';
+                } else {
+                    stat.textContent = `${target}+`;
+                }
             }
         };
-        
+
         updateCount();
     });
 }
@@ -315,7 +301,7 @@ AOS.init({
     mirror: false
 });
 
-// Initialize Particles.js
+// Initialize Particles.js + Stats Observer
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
@@ -425,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate stats when they come into view
+    // Trigger stats animation when about section is visible
     const statsSection = document.querySelector('.about');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
