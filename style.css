@@ -903,7 +903,7 @@ header.scrolled {
 .stat-num {
     font-size: 2rem;
     font-weight: 700;
-    color: EFBF04;
+    color: #FFD700; /* gold color */
     margin-bottom: 5px;
 }
 
