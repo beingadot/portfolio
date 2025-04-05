@@ -414,7 +414,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('image/heroooo.png') no-repeat center center;
+    background: url('heroooo.png') no-repeat center center;
     background-size: cover;
     z-index: -2;
 }
