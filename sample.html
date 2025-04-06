@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Template Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #0ae6c5;
+            box-shadow: var(--shadow);
+            padding: 5px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 1000;
+            color: #0d6255;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            color: var(--gray-color);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: white;
+            color: var(--dark-color);
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Mobile-specific template layout */
+@media (max-width: 640px) {
+    .templates-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .template-card {
+        margin-bottom: 0;
+    }
+}
+
+.template-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.reel-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f72585;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 👇 Ensuring 16:9 aspect ratio for the image */
+.img template-img {
+    width: 100%;
+    aspect-ratio: 14 / 9;
+    object-fit: fill;
+    display: block;
+}
+.template-img {
+    width: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.template-info {
+    padding: 15px;
+}
+
+.template-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.know-more-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.know-more-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.know-more-btn i {
+    margin-right: 5px;
+}
+
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer p {
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .portfolio-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                gap: 15px;
+            }
+            
+            .categories {
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .template-img {
+    width: 100%;
+    object-fit: fill;
+    display: block;
+}
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .template-info {
+                padding: 10px;
+            }
+            
+            .template-title {
+                font-size: 0.9rem;
+            }
+            
+            .know-more-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Being A Dot Works</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Choose Your Category</h1>
+            <p>Browse our collection of professional design templates tailored for your business needs.</p>
+            
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="salon">Salon</button>
+                <button class="category-btn" data-category="preschool">Pre-school</button>
+                <button class="category-btn" data-category="course">Course Seller</button>
+                <button class="category-btn" data-category="digital">Digital Agency</button>
+                <button class="category-btn" data-category="ecommerce">E-commerce</button>
+                <button class="category-btn" data-category="realestate">Real Estate</button>
+                <button class="category-btn" data-category="restaurant">Restaurant</button>
+                <button class="category-btn" data-category="fitness">Fitness & Gym</button>
+                <button class="category-btn" data-category="event">Event Planners</button>
+                <button class="category-btn" data-category="boutique">Boutique</button>
+                <button class="category-btn" data-category="makeup">Makeup Artists</button>
+                <button class="category-btn" data-category="pet">Pet Care</button>
+                <button class="category-btn" data-category="photo">Photography</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="templates">
+        <div class="container">
+            <div class="templates-grid">
+                <!-- Salon Templates (6 total, 2 reels) -->
+                <div class="template-card" data-category="salon">
+                    <img src="salon6.png" alt="Salon Flyer Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Elegant Salon Flyer</h3>
+                        <button class="know-more-btn" onclick="knowMore('Elegant Salon Flyer', 'https://via.placeholder.com/400x200?text=Salon+Flyer+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon1.png" alt="Salon Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Modern Salon Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Modern Salon Poster', 'https://via.placeholder.com/400x200?text=Salon+Poster+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon2.png" alt="Salon Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Modern Salon Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Modern Salon Poster', 'https://via.placeholder.com/400x200?text=Salon+Poster+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <div class="reel-badge">REEL</div>
+                
+                    <!-- Changed from <img> to <video> -->
+                    <video class="template-img" controls>
+                        <source src="salonreel2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Service Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="template-card" data-category="salon">
+                    <div class="reel-badge">REEL</div>
+                
+                    <!-- Changed from <img> to <video> -->
+                    <video class="template-img" controls>
+                        <source src="salonreel1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Service Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <div class="reel-badge">REEL</div>
+                
+                    <!-- Changed from <img> to <video> -->
+                    <video class="template-img" controls>
+                        <source src="salonreel3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Service Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon5.png" alt="Salon Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Social Media', 'https://via.placeholder.com/400x200?text=Salon+Social+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon3.png" alt="Salon Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Social Media', 'https://via.placeholder.com/400x200?text=Salon+Social+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon4.png" alt="Salon Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Business Card', 'https://via.placeholder.com/400x200?text=Salon+Business+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="salon">
+                    <img src="salon8.png" alt="Salon Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Salon Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Salon Business Card', 'https://via.placeholder.com/400x200?text=Salon+Business+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="templates-grid">
+                <!-- Pre-school Templates (6 total, 3 reels) -->
+                <div class="template-card" data-category="preschool">
+                    <img src="salon1.png" alt="Pre-school Flyer Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Colorful Preschool Flyer</h3>
+                        <button class="know-more-btn" onclick="knowMore('Colorful Preschool Flyer', 'https://via.placeholder.com/400x200?text=Preschool+Flyer+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon2.png" alt="Pre-school Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Engaging Preschool Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Engaging Preschool Poster', 'https://via.placeholder.com/400x200?text=Preschool+Poster+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon6.png" alt="Pre-school Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Learning Preschool Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Learning Preschool Poster', 'https://via.placeholder.com/400x200?text=Preschool+Poster+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <div class="reel-badge">REEL</div>
+            
+                    <video class="template-img" controls>
+                        <source src="salonreel1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Intro Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Intro Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <div class="reel-badge">REEL</div>
+            
+                    <video class="template-img" controls>
+                        <source src="salonreel2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Activity Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Activity Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <div class="reel-badge">REEL</div>
+            
+                    <video class="template-img" controls>
+                        <source src="salonreel3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Highlights Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Highlights Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon4.png" alt="Preschool Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Social Media', 'https://via.placeholder.com/400x200?text=Preschool+Social+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon5.png" alt="Preschool Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Social Media', 'https://via.placeholder.com/400x200?text=Preschool+Social+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon3.png" alt="Preschool Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Business Card', 'https://via.placeholder.com/400x200?text=Preschool+Business+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="template-card" data-category="preschool">
+                    <img src="salon8.png" alt="Preschool Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Preschool Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Preschool Business Card', 'https://via.placeholder.com/400x200?text=Preschool+Business+Card+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <h2>Want to explore more of my work?</h2>
+            <p>Visit my portfolio to see additional design projects and creative work.</p>
+            <a href="https://portfolioakshat-delta.vercel.app/" class="portfolio-btn">View Portfolio</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const templateCards = document.querySelectorAll('.template-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const category = button.dataset.category;
+
+                    // Filter templates
+                    templateCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        function knowMore(title, imageUrl) {
+            const message = `Hi, I'm interested in the "${title}" template. Can you share more details? ${imageUrl}`;
+            const whatsappUrl = `https://wa.me/917564024877?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
