@@ -7,39 +7,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3f37c9;
+            --primary-color: #1aff00;
+            --secondary-color: #00ffb7;
+            --accent-color: #00a8ff;
             --light-color: #f8f9fa;
             --dark-color: #212529;
-            --gray-color: #6c757d;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gray-dark: #495057;
+            --gray-medium: #6c757d;
+            --gray-light: #e9ecef;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
+            --border-radius: 12px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f5f7fa;
+            background-color: #212529;
             color: var(--dark-color);
             line-height: 1.6;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         header {
-            background-color: #0ae6c5;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             box-shadow: var(--shadow);
-            padding: 5px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -52,242 +56,361 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 1000;
-            color: #0d6255;
-        }
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
 
         .hero {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0 40px;
+            background: #212529;
         }
 
         .hero h1 {
-            font-size: 2rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: var(--dark-color);
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .hero p {
-            color: var(--gray-color);
-            max-width: 600px;
-            margin: 0 auto 30px;
+            color: var(--gray-medium);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
         }
 
         .categories {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 40px;
         }
 
         .category-btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 50px;
-            background-color: white;
-            color: var(--dark-color);
+            background-color: var(--gray-light);
+            color: var(--gray-dark);
             font-weight: 600;
             cursor: pointer;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
-        .category-btn:hover, .category-btn.active {
-            background-color: var(--primary-color);
+        .category-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
+            box-shadow: 0 6px 15px rgba(26, 255, 0, 0.3);
         }
 
         .templates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 0;
-}
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
 
-/* Mobile-specific template layout */
-@media (max-width: 640px) {
-    .templates-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
+        .template-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--gray-light);
+        }
 
-    .template-card {
-        margin-bottom: 0;
-    }
-}
+        .reel-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(to right, var(--accent-color), #0066ff);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.template-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-}
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 255, 183, 0.3);
+        }
 
-.reel-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f72585;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    z-index: 2;
-}
+        .template-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--gray-light);
+        }
 
-.template-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+        video.template-img {
+            height: 220px;
+            background-color: #000;
+        }
 
-/* 👇 Ensuring 16:9 aspect ratio for the image */
-.img template-img {
-    width: 100%;
-    aspect-ratio: 14 / 9;
-    object-fit: fill;
-    display: block;
-}
-.template-img {
-    width: 100%;
-    object-fit: fill;
-    display: block;
-}
+        .template-info {
+            padding: 20px;
+            background: white;
+        }
 
-.template-info {
-    padding: 15px;
-}
+        .template-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
 
-.template-title {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: var(--dark-color);
-}
+        .know-more-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 255, 0, 0.3);
+        }
 
-.know-more-btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    border: none;
-    cursor: pointer;
-}
+        .know-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 255, 0, 0.4);
+        }
 
-.know-more-btn:hover {
-    background-color: var(--secondary-color);
-}
-
-.know-more-btn i {
-    margin-right: 5px;
-}
-
+        .know-more-btn i {
+            margin-right: 8px;
+        }
 
         .footer {
-            background-color: var(--dark-color);
+            background: linear-gradient(135deg, #2b2d42, #1a1a2e);
             color: white;
-            padding: 50px 0;
-            margin-top: 50px;
+            padding: 80px 0;
+            margin-top: 60px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
         }
 
         .footer-content {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .footer h2 {
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            background: linear-gradient(to right, var(--secondary-color), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .footer p {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
         }
 
         .portfolio-btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 12px 30px;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: var(--shadow);
+            box-shadow: 0 8px 25px rgba(26, 255, 0, 0.3);
+            font-size: 1.05rem;
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .portfolio-btn:hover {
-            background-color: var(--secondary-color);
             transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(26, 255, 0, 0.4);
+        }
+
+        .portfolio-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-btn:hover::after {
+            transform: translateX(100%);
+        }
+
+        @media (max-width: 1024px) {
+            .templates-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 25px;
+            }
         }
 
         @media (max-width: 768px) {
-            .templates-grid {
-                gap: 15px;
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .categories {
-                gap: 8px;
+                gap: 10px;
             }
             
             .category-btn {
-                padding: 8px 15px;
+                padding: 10px 20px;
                 font-size: 0.9rem;
             }
             
+            .templates-grid {
+                gap: 20px;
+            }
+            
             .template-img {
-    width: 100%;
-    object-fit: fill;
-    display: block;
-}
+                height: 200px;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
+            .templates-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .template-card {
+                margin-bottom: 0;
+            }
+            
             .hero h1 {
                 font-size: 1.8rem;
             }
             
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .template-img {
+                height: 180px;
+            }
+            
             .template-info {
-                padding: 10px;
+                padding: 15px;
             }
             
             .template-title {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
             }
             
             .know-more-btn {
-                padding: 6px 10px;
-                font-size: 0.8rem;
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 40px 0 30px;
+            }
+            
+            .categories {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+            }
+            
+            .categories::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .category-btn {
+                flex-shrink: 0;
+            }
+            
+            .footer {
+                padding: 60px 0;
+            }
+            
+            .footer h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">Being A Dot Works</div>
+            <div class="logo"><img src="namedlogo.png"></div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h1>Choose Your Category</h1>
-            <p>Browse our collection of professional design templates tailored for your business needs.</p>
+            <p>Browse our premium collection of professional design templates tailored for your business needs. Each template is crafted to perfection.</p>
             
             <div class="categories">
-                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn active" data-category="all">All Templates</button>
                 <button class="category-btn" data-category="salon">Salon</button>
                 <button class="category-btn" data-category="preschool">Pre-school</button>
                 <button class="category-btn" data-category="stock">Stock Market</button>
@@ -341,13 +464,10 @@
 
                 <div class="template-card" data-category="salon">
                     <div class="reel-badge">REEL</div>
-                
-                    <!-- Changed from <img> to <video> -->
                     <video class="template-img" controls>
                         <source src="salonreel2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                
                     <div class="template-info">
                         <h3 class="template-title">Salon Service Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -358,13 +478,10 @@
                 
                 <div class="template-card" data-category="salon">
                     <div class="reel-badge">REEL</div>
-                
-                    <!-- Changed from <img> to <video> -->
                     <video class="template-img" controls>
                         <source src="salonreel1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                
                     <div class="template-info">
                         <h3 class="template-title">Salon Service Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -375,13 +492,10 @@
 
                 <div class="template-card" data-category="salon">
                     <div class="reel-badge">REEL</div>
-                
-                    <!-- Changed from <img> to <video> -->
                     <video class="template-img" controls>
                         <source src="salonreel3.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                
                     <div class="template-info">
                         <h3 class="template-title">Salon Service Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Salon Service Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -429,9 +543,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
             
-            <div class="templates-grid">
                 <!-- Pre-school Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="preschool">
                     <img src="preschool4.png" alt="Pre-school Flyer Template" class="template-img">
@@ -465,12 +577,10 @@
             
                 <div class="template-card" data-category="preschool">
                     <div class="reel-badge">REEL</div>
-            
                     <video class="template-img" controls>
                         <source src="preschoolreel1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            
                     <div class="template-info">
                         <h3 class="template-title">Preschool Intro Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Preschool Intro Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -481,12 +591,10 @@
             
                 <div class="template-card" data-category="preschool">
                     <div class="reel-badge">REEL</div>
-            
                     <video class="template-img" controls>
                         <source src="preschoolreel2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            
                     <div class="template-info">
                         <h3 class="template-title">Preschool Activity Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Preschool Activity Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -497,12 +605,10 @@
             
                 <div class="template-card" data-category="preschool">
                     <div class="reel-badge">REEL</div>
-            
                     <video class="template-img" controls>
                         <source src="preschoolreel3.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            
                     <div class="template-info">
                         <h3 class="template-title">Preschool Highlights Reel</h3>
                         <button class="know-more-btn" onclick="knowMore('Preschool Highlights Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
@@ -550,9 +656,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Stock Market Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="stock">
                     <img src="stock1.jpg" alt="Portfolio Showcase" class="template-img">
@@ -667,365 +771,350 @@
                         </button>
                     </div>
                 </div>
-            </div>
             
-            
-            <div class="templates-grid">
                 <!-- Course Templates (6 total, 3 reels) -->
-<div class="template-card" data-category="course">
-    <img src="course 1.jpg" alt="Course Flyer Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Professional Course Flyer</h3>
-        <button class="know-more-btn" onclick="knowMore('Professional Course Flyer', 'https://via.placeholder.com/400x200?text=Course+Flyer+1')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 1.jpg" alt="Course Flyer Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Professional Course Flyer</h3>
+                        <button class="know-more-btn" onclick="knowMore('Professional Course Flyer', 'https://via.placeholder.com/400x200?text=Course+Flyer+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 2.jpg" alt="Course Poster Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Engaging Course Poster</h3>
-        <button class="know-more-btn" onclick="knowMore('Engaging Course Poster', 'https://via.placeholder.com/400x200?text=Course+Poster+1')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 2.jpg" alt="Course Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Engaging Course Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Engaging Course Poster', 'https://via.placeholder.com/400x200?text=Course+Poster+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 3.jpg" alt="Course Poster Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Learning Course Poster</h3>
-        <button class="know-more-btn" onclick="knowMore('Learning Course Poster', 'https://via.placeholder.com/400x200?text=Course+Poster+2')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 3.jpg" alt="Course Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Learning Course Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Learning Course Poster', 'https://via.placeholder.com/400x200?text=Course+Poster+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <div class="reel-badge">REEL</div>
+                <div class="template-card" data-category="course">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="coursereel1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Course Intro Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Intro Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <video class="template-img" controls>
-        <source src="coursereel1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+                <div class="template-card" data-category="course">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="coursereel2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Course Content Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Content Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <div class="template-info">
-        <h3 class="template-title">Course Intro Reel</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Intro Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="course">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="coursereel3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Course Testimonials Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Testimonials Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <div class="reel-badge">REEL</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 4.jpg" alt="Course Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Course Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Social Media', 'https://via.placeholder.com/400x200?text=Course+Social+1')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <video class="template-img" controls>
-        <source src="coursereel2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+                <div class="template-card" data-category="course">
+                    <img src="course 5.jpg" alt="Course Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Course Social Media</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Social Media', 'https://via.placeholder.com/400x200?text=Course+Social+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <div class="template-info">
-        <h3 class="template-title">Course Content Reel</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Content Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 6.jpg" alt="Course Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Course Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Business Card', 'https://via.placeholder.com/400x200?text=Course+Business+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <div class="reel-badge">REEL</div>
+                <div class="template-card" data-category="course">
+                    <img src="course 7.jpg" alt="Course Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Course Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Course Business Card', 'https://via.placeholder.com/400x200?text=Course+Business+Card+2')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
+                <!-- Digital Agency Templates (6 total, 3 reels) -->
+                <div class="template-card" data-category="digital">
+                    <img src="digital4.png" alt="Digital Agency Flyer Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Modern Agency Flyer</h3>
+                        <button class="know-more-btn" onclick="knowMore('Modern Agency Flyer', 'https://via.placeholder.com/400x200?text=Digital+Agency+Flyer')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <video class="template-img" controls>
-        <source src="coursereel3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+                <div class="template-card" data-category="digital">
+                    <img src="digital5.png" alt="Digital Agency Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Creative Services Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Creative Services Poster', 'https://via.placeholder.com/400x200?text=Digital+Agency+Poster')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-    <div class="template-info">
-        <h3 class="template-title">Course Testimonials Reel</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Testimonials Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="digital">
+                    <img src="digital7.png" alt="Digital Portfolio Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Portfolio Showcase</h3>
+                        <button class="know-more-btn" onclick="knowMore('Portfolio Showcase', 'https://via.placeholder.com/400x200?text=Portfolio+Showcase')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 4.jpg" alt="Course Social Media Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Course Social Media</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Social Media', 'https://via.placeholder.com/400x200?text=Course+Social+1')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <!-- Reels Section -->
+                <div class="template-card" data-category="digital">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="digitalreel1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Agency Showreel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Agency Showreel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 5.jpg" alt="Course Social Media Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Course Social Media</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Social Media', 'https://via.placeholder.com/400x200?text=Course+Social+2')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="digital">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="digitalreel2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Client Case Study</h3>
+                        <button class="know-more-btn" onclick="knowMore('Client Case Study', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 6.jpg" alt="Course Business Card" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Course Business Card</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Business Card', 'https://via.placeholder.com/400x200?text=Course+Business+Card')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="digital">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="digitalreel3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Service Animation</h3>
+                        <button class="know-more-btn" onclick="knowMore('Service Animation', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="course">
-    <img src="course 7.jpg" alt="Course Business Card" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Course Business Card</h3>
-        <button class="know-more-btn" onclick="knowMore('Course Business Card', 'https://via.placeholder.com/400x200?text=Course+Business+Card+2')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-            </div>
+                <!-- Social Media & Branding -->
+                <div class="template-card" data-category="digital">
+                    <img src="digital1.avif" alt="Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Social Media Post</h3>
+                        <button class="know-more-btn" onclick="knowMore('Social Media Post', 'https://via.placeholder.com/400x200?text=Digital+Agency+Social')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-            <div class="templates-grid">
-                 <!-- Digital Agency Templates (6 total, 3 reels) -->
-<div class="template-card" data-category="digital">
-    <img src="digital4.png" alt="Digital Agency Flyer Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Modern Agency Flyer</h3>
-        <button class="know-more-btn" onclick="knowMore('Modern Agency Flyer', 'https://via.placeholder.com/400x200?text=Digital+Agency+Flyer')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="digital">
+                    <img src="digital2.avif" alt="Brand Identity Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Brand Guidelines</h3>
+                        <button class="know-more-btn" onclick="knowMore('Brand Guidelines', 'https://via.placeholder.com/400x200?text=Brand+Guidelines')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="digital">
-    <img src="digital5.png" alt="Digital Agency Poster Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Creative Services Poster</h3>
-        <button class="know-more-btn" onclick="knowMore('Creative Services Poster', 'https://via.placeholder.com/400x200?text=Digital+Agency+Poster')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="digital">
+                    <img src="digital3.avif" alt="Agency Business Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Minimal Business Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Minimal Business Card', 'https://via.placeholder.com/400x200?text=Agency+Business+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="digital">
-    <img src="digital7.png" alt="Digital Portfolio Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Portfolio Showcase</h3>
-        <button class="know-more-btn" onclick="knowMore('Portfolio Showcase', 'https://via.placeholder.com/400x200?text=Portfolio+Showcase')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<!-- Reels Section -->
-<div class="template-card" data-category="digital">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="digitalreel1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Agency Showreel</h3>
-        <button class="know-more-btn" onclick="knowMore('Agency Showreel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<div class="template-card" data-category="digital">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="digitalreel2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Client Case Study</h3>
-        <button class="know-more-btn" onclick="knowMore('Client Case Study', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<div class="template-card" data-category="digital">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="digitalreel3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Service Animation</h3>
-        <button class="know-more-btn" onclick="knowMore('Service Animation', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<!-- Social Media & Branding -->
-<div class="template-card" data-category="digital">
-    <img src="digital1.avif" alt="Social Media Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Social Media Post</h3>
-        <button class="know-more-btn" onclick="knowMore('Social Media Post', 'https://via.placeholder.com/400x200?text=Digital+Agency+Social')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<div class="template-card" data-category="digital">
-    <img src="digital2.avif" alt="Brand Identity Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Brand Guidelines</h3>
-        <button class="know-more-btn" onclick="knowMore('Brand Guidelines', 'https://via.placeholder.com/400x200?text=Brand+Guidelines')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<div class="template-card" data-category="digital">
-    <img src="digital3.avif" alt="Agency Business Card" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Minimal Business Card</h3>
-        <button class="know-more-btn" onclick="knowMore('Minimal Business Card', 'https://via.placeholder.com/400x200?text=Agency+Business+Card')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-
-<div class="template-card" data-category="digital">
-    <img src="digital6.avif" alt="Pitch Deck Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Client Pitch Deck</h3>
-        <button class="know-more-btn" onclick="knowMore('Client Pitch Deck', 'https://via.placeholder.com/400x200?text=Pitch+Deck+Template')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-            </div>
-
-            <div class="templates-grid">
+                <div class="template-card" data-category="digital">
+                    <img src="digital6.avif" alt="Pitch Deck Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Client Pitch Deck</h3>
+                        <button class="know-more-btn" onclick="knowMore('Client Pitch Deck', 'https://via.placeholder.com/400x200?text=Pitch+Deck+Template')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
                 <!-- eCommerce Templates (6 total, 3 reels) -->
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce4.png" alt="Product Flyer Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Product Promotion Flyer</h3>
-        <button class="know-more-btn" onclick="knowMore('Product Promotion Flyer', 'https://via.placeholder.com/400x200?text=eCommerce+Flyer')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce4.png" alt="Product Flyer Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Product Promotion Flyer</h3>
+                        <button class="know-more-btn" onclick="knowMore('Product Promotion Flyer', 'https://via.placeholder.com/400x200?text=eCommerce+Flyer')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce5.png" alt="Sale Poster Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Flash Sale Poster</h3>
-        <button class="know-more-btn" onclick="knowMore('Flash Sale Poster', 'https://via.placeholder.com/400x200?text=Sale+Poster')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce5.png" alt="Sale Poster Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Flash Sale Poster</h3>
+                        <button class="know-more-btn" onclick="knowMore('Flash Sale Poster', 'https://via.placeholder.com/400x200?text=Sale+Poster')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce7.png" alt="Catalog Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Product Catalog</h3>
-        <button class="know-more-btn" onclick="knowMore('Product Catalog', 'https://via.placeholder.com/400x200?text=Product+Catalog')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce7.png" alt="Catalog Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Product Catalog</h3>
+                        <button class="know-more-btn" onclick="knowMore('Product Catalog', 'https://via.placeholder.com/400x200?text=Product+Catalog')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<!-- eCommerce Reels Section -->
-<div class="template-card" data-category="ecommerce">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="ecommercereel1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Product Showcase Reel</h3>
-        <button class="know-more-btn" onclick="knowMore('Product Showcase Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <!-- eCommerce Reels Section -->
+                <div class="template-card" data-category="ecommerce">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="ecommercereel1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Product Showcase Reel</h3>
+                        <button class="know-more-btn" onclick="knowMore('Product Showcase Reel', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="ecommercereel2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Unboxing Experience</h3>
-        <button class="know-more-btn" onclick="knowMore('Unboxing Experience', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="ecommercereel2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Unboxing Experience</h3>
+                        <button class="know-more-btn" onclick="knowMore('Unboxing Experience', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <div class="reel-badge">REEL</div>
-    <video class="template-img" controls>
-        <source src="ecommercereel3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="template-info">
-        <h3 class="template-title">Seasonal Promotion</h3>
-        <button class="know-more-btn" onclick="knowMore('Seasonal Promotion', 'https://www.w3schools.com/html/mov_bbb.mp4')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <div class="reel-badge">REEL</div>
+                    <video class="template-img" controls>
+                        <source src="ecommercereel3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="template-info">
+                        <h3 class="template-title">Seasonal Promotion</h3>
+                        <button class="know-more-btn" onclick="knowMore('Seasonal Promotion', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<!-- eCommerce Marketing Templates -->
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce1.avif" alt="Social Media Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Instagram Product Post</h3>
-        <button class="know-more-btn" onclick="knowMore('Instagram Product Post', 'https://via.placeholder.com/400x200?text=Instagram+Product')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <!-- eCommerce Marketing Templates -->
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce1.avif" alt="Social Media Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Instagram Product Post</h3>
+                        <button class="know-more-btn" onclick="knowMore('Instagram Product Post', 'https://via.placeholder.com/400x200?text=Instagram+Product')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce2.avif" alt="Banner Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Website Banner</h3>
-        <button class="know-more-btn" onclick="knowMore('Website Banner', 'https://via.placeholder.com/400x200?text=Website+Banner')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce2.avif" alt="Banner Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Website Banner</h3>
+                        <button class="know-more-btn" onclick="knowMore('Website Banner', 'https://via.placeholder.com/400x200?text=Website+Banner')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce3.avif" alt="Discount Card" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Loyalty Card</h3>
-        <button class="know-more-btn" onclick="knowMore('Loyalty Card', 'https://via.placeholder.com/400x200?text=Loyalty+Card')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce3.avif" alt="Discount Card" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Loyalty Card</h3>
+                        <button class="know-more-btn" onclick="knowMore('Loyalty Card', 'https://via.placeholder.com/400x200?text=Loyalty+Card')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
 
-<div class="template-card" data-category="ecommerce">
-    <img src="ecommerce6.avif" alt="Email Template" class="template-img">
-    <div class="template-info">
-        <h3 class="template-title">Promotional Email</h3>
-        <button class="know-more-btn" onclick="knowMore('Promotional Email', 'https://via.placeholder.com/400x200?text=Promo+Email')">
-            <i class="fas fa-info-circle"></i> Know More
-        </button>
-    </div>
-</div>
-            </div>
-
-            <div class="templates-grid">
+                <div class="template-card" data-category="ecommerce">
+                    <img src="ecommerce6.avif" alt="Email Template" class="template-img">
+                    <div class="template-info">
+                        <h3 class="template-title">Promotional Email</h3>
+                        <button class="know-more-btn" onclick="knowMore('Promotional Email', 'https://via.placeholder.com/400x200?text=Promo+Email')">
+                            <i class="fas fa-info-circle"></i> Know More
+                        </button>
+                    </div>
+                </div>
+            
                 <!-- Real Estate Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="realestate">
                     <img src="realestate4.png" alt="Property Flyer Template" class="template-img">
@@ -1140,9 +1229,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Restaurant Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="restaurant">
                     <img src="restaurant4.png" alt="Menu Template" class="template-img">
@@ -1257,9 +1344,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Fitness Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="fitness">
                     <img src="fitness1.png" alt="Workout Plan" class="template-img">
@@ -1374,9 +1459,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Event Planner Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="event">
                     <img src="event1.png" alt="Invitation Card" class="template-img">
@@ -1491,9 +1574,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Boutique Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="boutique">
                     <img src="boutique1.png" alt="Catalog Cover" class="template-img">
@@ -1608,9 +1689,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Pet Care Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="pet">
                     <img src="pet1.png" alt="Pet Grooming Flyer" class="template-img">
@@ -1725,9 +1804,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="templates-grid">
+            
                 <!-- Photography Templates (6 total, 3 reels) -->
                 <div class="template-card" data-category="photo">
                     <img src="photo1.png" alt="Portfolio Showcase" class="template-img">
@@ -1843,15 +1920,13 @@
                     </div>
                 </div>
             </div>
-            
-
         </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-content">
             <h2>Want to explore more of my work?</h2>
-            <p>Visit my portfolio to see additional design projects and creative work.</p>
+            <p>Visit my portfolio to see additional design projects and creative work that can help elevate your brand.</p>
             <a href="https://portfolioakshat-delta.vercel.app/" class="portfolio-btn">View Portfolio</a>
         </div>
     </footer>
