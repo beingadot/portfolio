@@ -3,732 +3,1929 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Being A Dot | Premium Graphic Design</title>
+    <title>Beingadot</title>
     <link rel="icon" href="favicon.png" type="image/png">
-    <meta name="description" content="Professional graphic designer specializing in YouTube thumbnails, social media content, branding, and premium visual solutions.">
-    <meta name="keywords" content="graphic design, YouTube thumbnails, logo design, social media branding, premium design services">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            min-height: 100vh;
+            background-color: #f5f5f7;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+/* Hero Section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    cursor: url('https://cdn-icons-png.flaticon.com/512/892/892692.png'), auto;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 900px;
+    background-color: #2f2f2f;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 40px;
+    margin-left: -20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    margin-top: 40px;
+    margin-right: 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #9f0047;
+}
+
+/* Hero Text */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: -40px;
+}
+
+.akshat {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20rem;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #1aff00, #00ffb7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.3);
+}
+
+.beingadot {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14rem;
+    margin: 0;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    letter-spacing: 2px;
+}
+
+.typewriter {
+  color: white;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+  font-size: 2rem;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 57%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+/* Circle Image Overlay */
+.circle-wrapper {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px; /* Slightly larger than circle-overlay */
+    height: 270px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5,
+        #feda75
+    );
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4999; /* Just below image */
+}
+
+/* Inner Circle (Image) */
+.circle-overlay {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .akshat {
+        font-size: 1rem;
+    }
+
+    .beingadot {
+        font-size: 10rem;
+    }
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    .circle-wrapper {
+        width: 220px;
+        height: 220px;
+    }
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    .circle-overlay {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .akshat {
+        font-size: 12rem;
+    }
+
+    .beingadot {
+        font-size: 8rem;
+    }
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    .circle-wrapper {
+        width: 180px;
+        height: 180px;
+    }
     
-    <link rel="stylesheet" href="style.css">
+    .circle-overlay {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 700px;
+    }
+    
+    .akshat {
+        font-size: 7rem;
+    }
+
+    .beingadot {
+        font-size: 4.8rem;
+    }
+
+    .circle-wrapper {
+        margin-top: -13px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .circle-overlay {
+        width: 135px;
+        height: 135px;
+    }
+
+    .typewriter {
+        font-size: 1.16rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 400px;
+    }
+    
+    .akshat {
+        font-size: 8rem;
+    }
+
+    .beingadot {
+        font-size: 5rem;
+    }
+    
+    .typewriter {
+        font-size: 1rem;
+        white-space: normal;
+        animation: none;
+        border-right: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .circle-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle-overlay {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .navbar {
+        padding: 0 0px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        margin-right: 5px;
+    }
+    
+    .nav-links li a {
+        font-size: 1rem;
+    }
+}
+
+    
+        .iphone-wrapper {
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+    
+        .iphone-container {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease, scale 0.5s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+    
+        .iphone-container:hover {
+            transform: scale(1.05);
+        }
+    
+        .iphone-container.flipped {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(180deg) scale(1.4);
+            z-index: 1000;
+        }
+
+        /* Overlay for when iPhone is flipped */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+    
+        .iphone {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+            border: 2.5px solid #747474;
+        }
+    
+        .iphone-back {
+            background-color: #545454;
+            transform: rotateY(0deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+    
+        .iphone-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    
+        .iphone-front {
+            background-color: #000;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .screen {
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            background-color: #000;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        .notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 30px;
+            background-color: #000;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 10;
+        }
+    
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            backdrop-filter: blur(5px);
+        }
+    
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 30px solid white;
+            border-bottom: 20px solid transparent;
+            margin-left: 5px;
+        }
+    
+        .iphone-back:hover .play-button {
+            opacity: 1;
+        }
+    
+        .power-button {
+            position: absolute;
+            right: -8px;
+            top: 100px;
+            width: 8px;
+            height: 60px;
+            background-color: #1a1a1a;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    
+        .volume-buttons {
+            position: absolute;
+            left: -8px;
+            top: 100px;
+            width: 8px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+        .volume-button {
+            width: 100%;
+            height: 50px;
+            background-color: #1a1a1a;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+    
+        .volume-button:first-child {
+            margin-bottom: 20px;
+        }
+
+        .reel-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f72585;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+    
+        /* Responsive iPhone Section */
+        @media (max-width: 1200px) {
+            .iphone-container {
+                width: 280px;
+                height: 560px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .iphone-wrapper {
+                gap: 30px;
+            }
+            
+            .iphone-container {
+                width: 240px;
+                height: 480px;
+            }
+            
+            .reel-badge {
+                font-size: 0.8rem;
+                padding: 3px 6px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .iphone-wrapper {
+                gap: 20px;
+                margin-top: -40px;
+            }
+            
+            .iphone-container {
+                width: 200px;
+                height: 400px;
+            }
+            
+            .iphone {
+                border-radius: 28px;
+            }
+    
+            .screen {
+                border-radius: 10px;
+                width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            }
+            
+            
+            .notch {
+                top: 4px;
+                width: 65px;
+                height: 16px;
+            }
+            
+            .reel-badge {
+                top: 10px;
+                right: 10px;
+                font-size: 0.7rem;
+            }
+            
+            .iphone-container.flipped {
+                transform: translate(-50%, -50%) rotateY(180deg) scale(1.8);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .iphone-wrapper {
+                gap: 15px;
+            }
+            
+            .iphone-container {
+                width: 160px;
+                height: 320px;
+            }
+            
+            .iphone {
+                border-radius: 24px;
+            }
+    
+            .screen {
+                border-radius: 17px;
+            }
+            
+            .notch {
+                width: 50px;
+                height: 12px;
+            }
+            
+            .reel-badge {
+                top: 8px;
+                right: 8px;
+                font-size: 0.6rem;
+                padding: 2px 4px;
+            }
+            
+            .power-button,
+            .volume-buttons {
+                display: none;
+            }
+            
+            .iphone-container.flipped {
+                transform: translate(-50%, -50%) rotateY(180deg) scale(1.8);
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .iphone-container {
+                width: 140px;
+                height: 280px;
+            }
+            
+            .iphone {
+                border-radius: 20px;
+            }
+    
+            .screen {
+                border-radius: 20px;
+            }
+        }
+    </style>
+    
+</head>
+     
+<body>
+
+  <!--HERO-->
+    <div class="hero">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-aos="fade-down" data-aos-delay="100">Home</a></li>
+                <li><a href="#about" data-aos="fade-down" data-aos-delay="150">About</a></li>
+                <li><a href="#works" data-aos="fade-down" data-aos-delay="250">Works</a></li>
+                <li><a href="#contact" data-aos="fade-down" data-aos-delay="350">Contact</a></li>
+                <button class="theme-toggle" id="themeToggle" data-aos="fade-down" data-aos-delay="400">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </ul>
+        </div>
+    
+        <div class="hero-text">
+            <h1 class="akshat">AKSHAT</h1>
+            <h1 class="beingadot">BEINGADOT</h1>
+            <h1 class="typewriter">I design. I create. I elevate.</h1>
+
+            <div class="circle-wrapper">
+                <div class="circle-overlay">
+                    <img src="being.png" alt="Overlay" />
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+<!--ABOUT-->
+<style>
+.about-section {
+    width: 100%;
+    padding: 60px 5%; /* Increased vertical padding and horizontal padding as percentage */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Changed from space-between to space-around for better spacing */
+    align-items: center;
+    gap: 100px;
+    position: relative;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    margin: 0 auto; /* Centers the content while maintaining full width */
+}
+
+.image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #00ffb7;
+    box-shadow: 0 0 30px rgba(0, 255, 183, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #1aff00, #00ffb7);
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 50%;
+    border: 2px dashed #00ffb7;
+    z-index: 0;
+    animation: spin 20s linear infinite;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #1aff00, #00ffb7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+.highlight {
+    color: #00ffb7;
+    font-weight: 600;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 150px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 183, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #1aff00, #00ffb7);
+    animation: statLine 3s ease-in-out infinite;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #1aff00, #00ffb7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(0, 255, 183, 0.1);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+    width: 25px;
+    height: 25px;
+    left: 75%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rise {
+    0% { bottom: -100px; transform: translateX(0); }
+    50% { transform: translateX(100px); }
+    100% { bottom: 1080px; transform: translateX(-200px); }
+}
+
+@keyframes statLine {
+    0% { width: 0%; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0%; left: 100%; }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        justify-content: center;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .stats {
+        justify-content: center;
+    }
+    
+    .image-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+}
+</style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="loading-circle"></div>
-            <div class="loading-circle"></div>
-            <div class="loading-circle"></div>
-            <div class="loading-circle"></div>
+<section class="about-section">
+<div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
+
+<div class="image-container">
+    <img src="being.png" alt="Profile Image" class="profile-image">
+</div>
+
+<div class="content">
+    <h2>About Me</h2>
+    <p><span class="highlight">Creative Developer</span> with a passion for building digital experiences that matter.</p>
+    <p><span class="highlight">Problem Solver</span> who turns complex ideas into simple, beautiful solutions.</p>
+    <p><span class="highlight">Tech Enthusiast</span> always exploring new tools and pushing boundaries.</p>
+    
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number" id="projects-count">0</div>
+            <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="clients-count">0</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="experience-count">0</div>
+            <div class="stat-label">Months Experience</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<script>
+// Animated counter for statistics
+function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        obj.innerHTML = value + "+";
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Start animations when section is in view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateValue("projects-count", 0, 447, 2000);
+            animateValue("clients-count", 0, 148, 2000);
+            animateValue("experience-count", 0, 46, 2000);
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold: 0.5});
+
+observer.observe(document.querySelector('.about-section'));
+
+// Add floating particles
+document.addEventListener('DOMContentLoaded', () => {
+    const bubblesContainer = document.querySelector('.bubbles');
+    
+    for (let i = 0; i < 15; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        // Random properties
+        const size = Math.random() * 60 + 10;
+        const posX = Math.random() * 100;
+        const duration = Math.random() * 15 + 5;
+        const delay = Math.random() * 5;
+        
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${posX}%`;
+        bubble.style.animationDuration = `${duration}s`;
+        bubble.style.animationDelay = `${delay}s`;
+        bubble.style.opacity = Math.random() * 0.5 + 0.1;
+        
+        bubblesContainer.appendChild(bubble);
+    }
+});
+</script>
+
+<!-- PAST WORKS SECTION -->
+<style>
+    .past-works {
+        width: 100%;
+        padding: 60px 5%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .works-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .works-header h2 {
+        font-size: 3.5rem;
+        background: linear-gradient(to right, #1aff00, #00ffb7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    
+    .works-header p {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .works-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .work-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .work-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 255, 183, 0.2);
+    }
+    
+    .work-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .work-card:hover .work-image {
+        transform: scale(1.05);
+    }
+    
+    .work-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
+        padding: 30px 20px 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .work-card:hover .work-overlay {
+        transform: translateY(0);
+    }
+    
+    .work-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: white;
+        background: linear-gradient(to right, #1aff00, #00ffb7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    .work-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .work-tag {
+        background: rgba(0, 255, 183, 0.2);
+        color: #00ffb7;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        border: 1px solid rgba(0, 255, 183, 0.3);
+    }
+    
+    /* Reuse the same bubbles animation from about section */
+    .works-bubbles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+    
+    .works-bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(0, 255, 183, 0.1);
+        border-radius: 50%;
+        animation: rise 15s infinite ease-in;
+    }
+    
+    /* Animation for cards */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .work-card {
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .work-card:nth-child(1) { animation-delay: 0.1s; }
+    .work-card:nth-child(2) { animation-delay: 0.2s; }
+    .work-card:nth-child(3) { animation-delay: 0.3s; }
+    .work-card:nth-child(4) { animation-delay: 0.4s; }
+    .work-card:nth-child(5) { animation-delay: 0.5s; }
+    .work-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    @media (max-width: 768px) {
+        .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+        
+        .works-header h2 {
+            font-size: 2.5rem;
+        }
+        
+        .works-header p {
+            font-size: 1.1rem;
+        }
+    }
+    </style>
+    
+    <section class="past-works">
+        <div class="works-bubbles">
+            <!-- Bubbles will be added via JS same as about section -->
+        </div>
+        
+        <div class="works-header">
+            <h2>Creative Canvas</h2>
+            <p>A splash of creativity, a dash of skill—here’s what I’ve been crafting.</p>
+        </div>
+        
+        <div class="works-grid">
+            <!-- Project 1 -->
+            <div class="work-card">
+                <img src="project1.jpg" alt="Project 1" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">E-Commerce Platform</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">React</span>
+                        <span class="work-tag">Node.js</span>
+                        <span class="work-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="work-card">
+                <img src="project2.jpg" alt="Project 2" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">Mobile App UI</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">Figma</span>
+                        <span class="work-tag">UI/UX</span>
+                        <span class="work-tag">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="work-card">
+                <img src="project3.jpg" alt="Project 3" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">Dashboard System</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">Vue.js</span>
+                        <span class="work-tag">D3.js</span>
+                        <span class="work-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="work-card">
+                <img src="project4.jpg" alt="Project 4" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">Brand Identity</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">Logo Design</span>
+                        <span class="work-tag">Branding</span>
+                        <span class="work-tag">Illustration</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="work-card">
+                <img src="project5.jpg" alt="Project 5" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">Web Application</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">Angular</span>
+                        <span class="work-tag">NestJS</span>
+                        <span class="work-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="work-card">
+                <img src="project6.jpg" alt="Project 6" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">Marketing Website</h3>
+                    <div class="work-tags">
+                        <span class="work-tag">WordPress</span>
+                        <span class="work-tag">SEO</span>
+                        <span class="work-tag">Content Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    // Add bubbles to works section (same as about section)
+    document.addEventListener('DOMContentLoaded', () => {
+        const bubblesContainer = document.querySelector('.works-bubbles');
+        
+        for (let i = 0; i < 15; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('works-bubble');
+            
+            // Random properties
+            const size = Math.random() * 60 + 10;
+            const posX = Math.random() * 100;
+            const duration = Math.random() * 15 + 5;
+            const delay = Math.random() * 5;
+            
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${posX}%`;
+            bubble.style.animationDuration = `${duration}s`;
+            bubble.style.animationDelay = `${delay}s`;
+            bubble.style.opacity = Math.random() * 0.5 + 0.1;
+            
+            bubblesContainer.appendChild(bubble);
+        }
+    });
+    
+    // Animate cards when section comes into view
+    const worksObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                worksObserver.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.1});
+    
+    document.querySelectorAll('.work-card').forEach(card => {
+        worksObserver.observe(card);
+    });
+    </script>
+ 
+ <!--REEEEEEEEEEEEEEEEEELLLLLLLLSSSSS-->
+     <style>
+         /* 🌌 BASE STYLES */
+         body {
+             margin: 0;
+             padding: 0;
+             font-family: 'Poppins', sans-serif;
+             color: white;
+         }
+ 
+         /* 🎬 REELS SECTION */
+         .reels-section {
+             width: 100%;
+             margin-top: -40PX;
+             padding: 60px 20px;
+             position: relative;
+             overflow: hidden;
+         }
+ 
+         .reels-header {
+             text-align: center;
+             margin-bottom: 40px;
+         }
+ 
+         
+ 
+         
+ 
+         /* 💻 DESKTOP STYLES */
+         @media (min-width: 768px) {
+             .reels-grid {
+                 grid-template-columns: repeat(3, 1fr);
+                 gap: 25px;
+             }
+             
+             .reel-card:hover {
+                 transform: scale(1.03);
+                 box-shadow: 0 10px 30px rgba(0,255,183,0.4);
+             }
+             
+             .reel-card:hover .play-icon {
+                 opacity: 1;
+                 transform: translate(-50%, -50%) scale(1.2);
+             }
+         }
+ 
+         /* ✨ ANIMATIONS */
+         @keyframes float {
+             0%, 100% { transform: translateY(0); }
+             50% { transform: translateY(-15px); }
+         }
+ 
+         .reel-card {
+             animation: float 6s ease-in-out infinite;
+         }
+ 
+         .reel-card:nth-child(2) {
+             animation-delay: 0.4s;
+         }
+ 
+         .reel-card:nth-child(3) {
+             animation-delay: 0.8s;
+         }
+ 
+         .reel-card:nth-child(4) {
+             animation-delay: 1.2s;
+         }
+ 
+         /* BUBBLES BACKGROUND */
+         .reels-bubbles {
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             top: 0;
+             left: 0;
+             z-index: 0;
+             overflow: hidden;
+         }
+ 
+         .bubble {
+             position: absolute;
+             border-radius: 50%;
+             background: rgba(0, 255, 183, 0.1);
+             animation: rise linear infinite;
+         }
+ 
+         @keyframes rise {
+             to {
+                 bottom: 100%;
+                 opacity: 0;
+                 transform: translateX(var(--random-translate));
+             }
+         }
+     </style>
+ </head>
+ <body>
+     <!-- 🎥 REELS SECTION -->
+     <section class="reels-section">
+         <div class="reels-bubbles" id="bubbles-container"></div>
+         
+         <div class="reels-header">
+             <h2>My Reels</h2>
+             <p>Lights. Camera. Creation.</p>
+         </div>
+     </section>
+ 
+     <script>
+         // 🎇 Create floating bubbles
+         const bubblesContainer = document.getElementById('bubbles-container');
+         const bubbleCount = 20;
+         
+         for (let i = 0; i < bubbleCount; i++) {
+             const bubble = document.createElement('div');
+             bubble.classList.add('bubble');
+             
+             // Random properties
+             const size = Math.random() * 30 + 10;
+             const posX = Math.random() * 100;
+             const duration = Math.random() * 20 + 10;
+             const delay = Math.random() * 5;
+             const translateX = (Math.random() > 0.5 ? '-' : '') + (Math.random() * 100 + 50);
+             
+             bubble.style.cssText = `
+                 width: ${size}px;
+                 height: ${size}px;
+                 left: ${posX}%;
+                 bottom: -${size}px;
+                 animation-duration: ${duration}s;
+                 animation-delay: ${delay}s;
+                 opacity: ${Math.random() * 0.2 + 0.1};
+                 --random-translate: ${translateX}px;
+             `;
+             
+             bubblesContainer.appendChild(bubble);
+         }
+ 
+         // 🎬 Video play/pause functionality
+         document.querySelectorAll('.reel-video').forEach(reel => {
+             const video = reel.querySelector('video');
+             const playIcon = reel.querySelector('.play-icon');
+             
+             reel.addEventListener('click', () => {
+                 if (video.paused) {
+                     video.play();
+                     playIcon.style.opacity = '0';
+                 } else {
+                     video.pause();
+                     playIcon.style.opacity = '0.9';
+                 }
+             });
+             
+             // Show play icon when video ends
+             video.addEventListener('ended', () => {
+                 playIcon.style.opacity = '0.9';
+             });
+         });
+ 
+         // 📱 Mobile touch improvements
+         let touchTimer;
+         document.querySelectorAll('.reel-card').forEach(card => {
+             card.addEventListener('touchstart', () => {
+                 touchTimer = setTimeout(() => {
+                     card.classList.add('tap-active');
+                 }, 100);
+             });
+             
+             card.addEventListener('touchend', () => {
+                 clearTimeout(touchTimer);
+                 card.classList.remove('tap-active');
+             });
+         });
+     </script>
+ </body>
+ </html>
+
+
+<!--REELS-->
+    <div class="iphone-wrapper">
+        <div class="iphone-container" data-id="1">
+            <div class="iphone iphone-back">
+                <div class="reel-badge">REEL</div>
+                <img src="iphone.png" alt="iPhone Image" class="iphone-img">
+            </div>
+            <div class="iphone iphone-front">
+                <div class="screen">
+                    <div class="notch"></div>
+                    <video id="iphone-video-1" controls>
+                        <source src="reel1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    
+        <div class="iphone-container" data-id="2">
+            <div class="iphone iphone-back">
+                <div class="reel-badge">REEL</div>
+                <img src="iphone.png" alt="iPhone Image" class="iphone-img">
+            </div>
+            <div class="iphone iphone-front">
+                <div class="screen">
+                    <div class="notch"></div>
+                    <video id="iphone-video-2" controls>
+                        <source src="preschoolreel1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    
+        <div class="iphone-container" data-id="3">
+            <div class="iphone iphone-back">
+                <div class="reel-badge">REEL</div>
+                <img src="iphone.png" alt="iPhone Image" class="iphone-img">
+            </div>
+            <div class="iphone iphone-front">
+                <div class="screen">
+                    <div class="notch"></div>
+                    <video id="iphone-video-3" controls>
+                        <source src="coursereel1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="iphone-container" data-id="4">
+            <div class="iphone iphone-back">
+                <div class="reel-badge">REEL</div>
+                <img src="iphone.png" alt="iPhone Image" class="iphone-img">
+            </div>
+            <div class="iphone iphone-front">
+                <div class="screen">
+                    <div class="notch"></div>
+                    <video id="iphone-video-4" controls>
+                        <source src="stockreel2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Cursor Effect -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="sample.html" class="logo" data-aos="fade-down">BEING<span>ADOT</span></a>
-            
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" data-aos="fade-down" data-aos-delay="100">Home</a></li>
-                    <li><a href="#about" data-aos="fade-down" data-aos-delay="150">About</a></li>
-                    <li><a href="iphone copy.html" data-aos="fade-down" data-aos-delay="200">Portfolio</a></li>
-                    <li><a href="#reels" data-aos="fade-down" data-aos-delay="250">Reels</a></li>
-                    <li><a href="#services" data-aos="fade-down" data-aos-delay="300">Services</a></li>
-                    <li><a href="#contact" data-aos="fade-down" data-aos-delay="350">Contact</a></li>
-                    <button class="theme-toggle" id="themeToggle" data-aos="fade-down" data-aos-delay="400">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </ul>
-            </nav>
-            
-            <div class="hamburger" id="hamburger" data-aos="fade-down" data-aos-delay="400">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-
-<!-- Hero Section -->
-<section class="hero" id="home">
-    <!-- Background Image -->
-    <div class="hero-bg" style="background-image: url('heroooo.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
-
-    <!-- Particle Effect -->
-    <div class="particles" id="particles-js"></div>
-
-    <!-- Hero Content -->
-    <div class="container">
-        <div class="hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="300">
-                Transforming Ideas Into <span class="text-gradient">Stunning Visuals</span>
-            </h1>
-            <p data-aos="fade-up" data-aos-delay="400">
-                Premium graphic design services that elevate your brand and captivate your audience. Let's create something extraordinary together.
-            </p>
-            <div class="hero-btns" data-aos="fade-up" data-aos-delay="500">
-                <a href="#portfolio" class="btn btn-pulse">View Portfolio</a>
-                <a href="#contact" class="btn btn-outline btn-pulse">Get in Touch</a>
-            </div>
-        </div>
+    <!-- 💬 CLIENTS TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+    <div class="testimonials-bubbles"></div>
+    
+    <div class="testimonials-header">
+        <h2>Client's Love</h2>
+        <p>What people say about working with me</p>
     </div>
-
-    <!-- Scroll Down Indicator -->
-    <div class="scroll-down" data-aos="fade-up" data-aos-delay="600">
-        <span></span>
-        <span></span>
-        <span></span>
+    
+    <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">Absolutely transformed our digital presence! The attention to detail and creative solutions were beyond our expectations.</p>
+            <div class="client-info">
+                <img src="man1.jpg" alt="Sarah Johnson" class="client-photo">
+                <div class="client-details">
+                    <h4>Ranveer Bhatiya</h4>
+                    <p>CEO, TechSolutions</p>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">Delivered our project ahead of schedule with pixel-perfect execution. Will definitely work together again!</p>
+            <div class="client-info">
+                <img src="man3.jpg" alt="Michael Chen" class="client-photo">
+                <div class="client-details">
+                    <h4>Sarah Singh</h4>
+                    <p>Owner, Pre School</p>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">Brought fresh ideas to the table that elevated our brand. Professional, communicative, and highly skilled.</p>
+            <div class="client-info">
+                <img src="man2.jpg" alt="Emma Rodriguez" class="client-photo">
+                <div class="client-details">
+                    <h4>Sachin Awasthi</h4>
+                    <p>Ecommerce Owner</p>
+                </div>
+            </div>
+            <div class="rating">★★★★☆</div>
+        </div>
     </div>
 </section>
 
+<style>
+/* 🌟 TESTIMONIALS STYLES */
+.testimonials-section {
+    width: 100%;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-header h2 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #1aff00, #00ffb7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+}
+
+.testimonials-header p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,255,183,0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,255,183,0.2);
+    border-color: rgba(0,255,183,0.3);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 5rem;
+    color: rgba(0,255,183,0.1);
+    line-height: 1;
+    font-family: serif;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ffb7;
+}
+
+.client-details h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.client-details p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.rating {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    color: #00ffb7;
+    font-size: 1.2rem;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.testimonial-card {
+    animation: float 8s ease-in-out infinite;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+/* BUBBLES BACKGROUND */
+.testimonials-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 255, 183, 0.05);
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    to {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(var(--random-translate));
+    }
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
     
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            
-            <div class="about-container">
-                <div class="about-img floating" data-aos="fade-right">
-                    <div class="glow"></div>
-                    <img src="profile.png" alt="Designer Portrait">
-                </div>
-                
-                <div class="about-content" data-aos="fade-left">
-                    <h2>Hi, I'm <span class="text-gradient">Akshat</span></h2>
-                    <p>With over 3 years of experience in the creative industry, I specialize in crafting visually compelling designs that tell stories and drive engagement. My passion lies in creating designs that not only look beautiful but also serve a strategic purpose.</p>
-                    <p>I've worked with brands across various industries, helping them establish a strong visual identity that resonates with their target audience. From startups to established corporations, my designs have helped businesses stand out in competitive markets.</p>
-                    
-                    <div class="stats" data-aos="fade-up">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="150+">0</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="50+">0</div>
-                            <div class="stat-label">Clients</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="4+">0</div>
-                            <div class="stat-label">Years Exp</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills">
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
-                            <i class="fab fa-adobe"></i>
-                            <span>Photoshop</span>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
-                            <i class="fab fa-adobe"></i>
-                            <span>Illustrator</span>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="fab fa-adobe"></i>
-                            <span>After Effects</span>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
-                            <i class="fab fa-figma"></i>
-                            <span>Figma</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    .testimonial-card {
+        padding: 25px;
+    }
+    
+    .testimonials-header h2 {
+        font-size: 2.5rem;
+    }
+}
+</style>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My <span class="text-gradient">Portfolio</span></h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">A collection of my best creative works</p>
-            
-            <div class="portfolio-filter" data-aos="fade-up" data-aos-delay="150">
-                <button class="filter-btn active" data-filter="all">All Works</button>
-                <button class="filter-btn" data-filter="thumbnails">YouTube Thumbnails</button>
-                <button class="filter-btn" data-filter="instagram">Instagram Management</button>
-                <button class="filter-btn" data-filter="digital">Digital Marketing</button>
-                <button class="filter-btn" data-filter="flyers">Flyers & Banners</button>
-                <button class="filter-btn" data-filter="logos">Logos & Branding</button>
-            </div>
-            
-            <div class="portfolio-grid">
-                <!-- YouTube Thumbnails -->
-                <div class="portfolio-item" data-category="thumbnails" data-aos="zoom-in">
-                    <img src="yt1.png" alt="YouTube Thumbnail Design">
-                    <div class="portfolio-overlay">
-                        <h3>Tech Review Thumbnail</h3>
-                        <p>High-converting thumbnail for a popular tech channel</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-                
-                <!-- Instagram Management -->
-                <div class="portfolio-item" data-category="instagram" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="ss1.png" alt="Instagram Profile Management">
-                    <div class="portfolio-overlay">
-                        <h3>Salon Business</h3>
-                        <p>Complete profile redesign + content strategy</p>
-                        <button class="btn view-btn">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Digital Marketing Templates -->
-                <div class="portfolio-item" data-category="digital" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Email Marketing Template">
-                    <div class="portfolio-overlay">
-                        <h3>Email Campaign Template</h3>
-                        <p>Converted 28% higher than client's previous</p>
-                        <button class="btn view-btn">View Template</button>
-                    </div>
-                </div>
-                
-                <!-- Additional Items -->
-                <div class="portfolio-item" data-category="thumbnails" data-aos="zoom-in">
-                    <img src="yt2.png" alt="YouTube Thumbnail Design">
-                    <div class="portfolio-overlay">
-                        <h3>Political Thumbnail</h3>
-                        <p>High-converting thumbnail for news commentary</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-          
-                <div class="portfolio-item" data-category="instagram" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="ss3.png" alt="Instagram Profile Grid">
-                    <div class="portfolio-overlay">
-                        <h3>e-commerce</h3>
-                        <p>Cohesive theme + content calendar</p>
-                        <button class="btn view-btn">View Transformation</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="digital" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Social Media Ad Template">
-                    <div class="portfolio-overlay">
-                        <h3>Facebook Ad Template</h3>
-                        <p>ROAS improved by 42%</p>
-                        <button class="btn view-btn">View Template</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="thumbnails" data-aos="zoom-in">
-                    <img src="yt3.png" alt="YouTube Thumbnail Design">
-                    <div class="portfolio-overlay">
-                        <h3>Success Thumbnail</h3>
-                        <p>Motivational content thumbnail</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="instagram" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="ss2.png" alt="Instagram Story Highlights">
-                    <div class="portfolio-overlay">
-                        <h3>e-Commerce</h3>
-                        <p>Custom icons + organized story categories</p>
-                        <button class="btn view-btn">View Profile</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="digital" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="windows-w79mIrYKcK4-unsplash.jpg" alt="Landing Page Design">
-                    <div class="portfolio-overlay">
-                        <h3>Landing Page Template</h3>
-                        <p>Increased conversions by 35%</p>
-                        <button class="btn view-btn">View Design</button>
-                    </div>
-                </div>
-                
-                <!-- Original Flyers and Logos items would remain here -->
-                <div class="portfolio-item" data-category="flyers" data-aos="zoom-in">
-                    <img src="fly1.jpg" alt="Event Flyer Design">
-                    <div class="portfolio-overlay">
-                        <h3>Music Festival Flyer</h3>
-                        <p>Vibrant design for a summer music event</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="logos" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="logo2.avif" alt="Logo Design">
-                    <div class="portfolio-overlay">
-                        <h3>Coffee Shop Branding</h3>
-                        <p>Complete logo and visual identity package</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="flyers" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="fly2.jpg" alt="Event Flyer Design">
-                    <div class="portfolio-overlay">
-                        <h3>Music Festival Flyer</h3>
-                        <p>Vibrant design for a summer music event</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="logos" data-aos="zoom-in">
-                    <img src="logo1.avif" alt="Logo Design">
-                    <div class="portfolio-overlay">
-                        <h3>Coffee Shop Branding</h3>
-                        <p>Complete logo and visual identity package</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="flyers" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="fly3.jpg" alt="Event Flyer Design">
-                    <div class="portfolio-overlay">
-                        <h3>Music Festival Flyer</h3>
-                        <p>Vibrant design for a summer music event</p>
-                        <button class="btn view-btn">View Project</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<script>
+// 🎇 Initialize testimonials section
+document.addEventListener('DOMContentLoaded', function() {
+    // Create bubbles
+    const container = document.querySelector('.testimonials-bubbles');
+    const bubbleCount = 15;
+    
+    for (let i = 0; i < bubbleCount; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
         
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox">
-            <div class="lightbox-content">
-                <span class="lightbox-close">&times;</span>
-                <img src="" alt="" id="lightbox-img">
-                <video controls id="lightbox-video">
-                    <source src="" type="video/mp4">
-                </video>
-                <div class="lightbox-details">
-                    <h3 id="lightbox-title"></h3>
-                    <p id="lightbox-description"></p>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Random properties
+        const size = Math.random() * 30 + 10;
+        const posX = Math.random() * 100;
+        const duration = Math.random() * 20 + 10;
+        const delay = Math.random() * 5;
+        const translateX = (Math.random() > 0.5 ? '-' : '') + (Math.random() * 100 + 50);
+        
+        bubble.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${posX}%;
+            bottom: -${size}px;
+            animation-duration: ${duration}s;
+            animation-delay: ${delay}s;
+            opacity: ${Math.random() * 0.2 + 0.1};
+            --random-translate: ${translateX}px;
+        `;
+        
+        container.appendChild(bubble);
+    }
 
-    <!-- Reels Section -->
-    <section class="reels" id="reels">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My <span class="text-gradient">Reels</span> Work</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Scroll-stopping content designed for maximum engagement</p>
-            
-            <div class="reels-container">
-                <div class="reel-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="reel-video">
-                        <video loop playsinline>
-                            <source src="reel1.mp4" type="video/mp4">
-                        </video>
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="reel-info">
-                        <h3>Motion Graphic</h3>
-                        <p>Increased engagement by 75%</p>
-                    </div>
-                </div>
-                
-                <div class="reel-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="reel-video">
-                        <video loop playsinline>
-                            <source src="reel2.mp4" type="video/mp4">
-                        </video>
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="reel-info">
-                        <h3>Product Showcase</h3>
-                        <p>Generated 500+ leads</p>
-                    </div>
-                </div>
-                
-                <div class="reel-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="reel-video">
-                        <video loop playsinline>
-                            <source src="reel3.mp4" type="video/mp4">
-                        </video>
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="reel-info">
-                        <h3>Trending Reels</h3>
-                        <p>Edites made for MEME pages</p>
-                    </div>
-                </div>
-                
-                <div class="reel-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="reel-video">
-                        <video loop muted playsinline>
-                            <source src="reel4.mp4" type="video/mp4">
-                        </video>
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="reel-info">
-                        <h3>Animated Videos</h3>
-                        <p>Grabs attention and Stop viewers</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="reels-stats">
-    <div class="stat-card">
-        <div class="stat-num">1.2M+</div>
-        <div class="stat-label">Total Views</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-num">85K+</div>
-        <div class="stat-label">Engagements</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-num">120+</div>
-        <div class="stat-label">Reels Created</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-num">75%</div>
-        <div class="stat-label">Avg. Retention</div>
-    </div>
-</div>
+    // Animate cards when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
 
-        </div>
-    </section>
-                
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My <span class="text-gradient">Services</span></h2>
-            
-            <div class="services-container">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-photo-film"></i>
-                    </div>
-                    <h3>YouTube Thumbnails</h3>
-                    <p>High-converting, eye-catching thumbnails designed to boost your CTR and grow your channel.</p>
-                    <div class="service-price">Starting at ₹299</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20YouTube%20Thumbnails%20design" class="btn btn-pulse">Get Started</a>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-screen"></i>
-                    </div>
-                    <h3>Reels</h3>
-                    <p>Scroll-stopping optimized for Instagram Reels and TikTok platforms.</p>
-                    <div class="service-price">Starting at ₹299</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20Reels%20for%20Social%20Media" class="btn btn-pulse">Get Started</a>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Flyers & Banners</h3>
-                    <p>Professional print and digital promotional materials for events and marketing campaigns.</p>
-                    <div class="service-price">Starting at ₹199</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20Flyers%20&%20Banners" class="btn btn-pulse">Get Started</a>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-roller"></i>
-                    </div>
-                    <h3>Poster Design</h3>
-                    <p>Visually striking posters for movies, events, concerts, and promotional purposes.</p>
-                    <div class="service-price">Starting at ₹399</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20Poster%20Design" class="btn btn-pulse">Get Started</a>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-copyright"></i>
-                    </div>
-                    <h3>Logos & Branding</h3>
-                    <p>Complete branding packages including logos, color schemes, and visual identity guides.</p>
-                    <div class="service-price">Starting at ₹999</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20Logos%20&%20Branding" class="btn btn-pulse">Get Started</a>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <h3>Social Media Kits</h3>
-                    <p>Cohesive Instagram profile designs, story templates, and content creation.</p>
-                    <div class="service-price">Starting at ₹1999</div>
-                    <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20Social%20Media%20Kits" class="btn btn-pulse">Get Started</a>
-                </div>
-            </div>
-            
-            <!-- Pricing Section -->
-            <div class="pricing">
-                <h2 class="section-title" data-aos="fade-up">Pricing <span class="text-gradient">Plans</span></h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Flexible options to suit your needs</p>
-                
-                <div class="pricing-container">
-                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pricing-badge">Basic</div>
-                        <h3>Growth Starter</h3>
-                        <div class="price">₹4,999<span>/month</span></div>
-                        <ul class="pricing-features">
-                            <li>Profile Makeover (Logo & Bio)</li>
-                            <li>3 Instagram Posts per Week</li>
-                            <li>Trending Reels Suggestions</li>
-                            <li>Basic Marketing Tips</li>
-                        </ul>
-                        <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20the%20Basic%20Growth%20Plan" class="btn btn-pulse">Choose Plan</a>
-                    </div>
-                    
-                    <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pricing-badge">Popular</div>
-                        <h3>Professional Branding</h3>
-                        <div class="price">₹9,999<span>/month</span></div>
-                        <ul class="pricing-features">
-                            <li>Everything in Basic Plan</li>
-                            <li>2 Custom-Designed Templates/Week</li>
-                            <li>1 Edited Instagram Reel/Week</li>
-                            <li>Custom Landing Page</li>
-                            <li>Hashtag & SEO Optimization</li>
-                            <li>Performance Report & Strategy</li>
-                        </ul>
-                        <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20the%20Professional%20Branding%20Plan" class="btn btn-pulse">Choose Plan</a>
-                    </div>
-                    
-                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="pricing-badge">Premium</div>
-                        <h3>Ultimate Growth</h3>
-                        <div class="price">₹14,999<span>/month</span></div>
-                        <ul class="pricing-features">
-                            <li>Everything in Professional Plan</li>
-                            <li>2 Edited Instagram Reels/Week</li>
-                            <li>Ad Management (Meta Ads)</li>
-                            <li>Engagement Strategy</li>
-                            <li>Advanced Performance Analysis</li>
-                            <li>Exclusive Marketing Consultation</li>
-                        </ul>
-                        <a href="https://wa.me/7564024877?text=I'm%20interested%20in%20the%20Ultimate%20Growth%20Plan" class="btn btn-pulse">Choose Plan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Client <span class="text-gradient">Testimonials</span></h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">What my clients say about my work</p>
-            
-            <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-content">
-                        "Akshat's designs completely transformed my YouTube channel. My CTR increased by 40% after using her thumbnails. She has an incredible eye for detail and understands exactly what works for the algorithm."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="man1.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Anand Dubey</h4>
-                            <p>Tech Reviewer</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        "Working with Akshat on our brand identity was a game-changer. She captured our vision perfectly and delivered a complete branding package that elevated our business. The logo she designed has become instantly recognizable in our industry."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="man3.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Sarah Singh</h4>
-                            <p>Founder, Bloom Cosmetics</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        "The event flyers Akshat created for our music festival were absolutely stunning. We sold out tickets faster than ever before, and many attendees mentioned they came because the design caught their eye. Will definitely work with her again!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="man2.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Parul Raj</h4>
-                            <p>Event Organizer</p>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    document.querySelectorAll('.testimonial-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+});
+</script>
+    
+    <div class="overlay"></div>
 
-                
-                <div class="slider-nav">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                </div>
-            </div>
+    <script>
+        const iphoneContainers = document.querySelectorAll('.iphone-container');
+        const overlay = document.querySelector('.overlay');
+
+        iphoneContainers.forEach(container => {
+            const id = container.dataset.id;
+            const video = document.getElementById(`iphone-video-${id}`);
+
+            container.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isFlipped = container.classList.contains('flipped');
+
+                iphoneContainers.forEach(other => {
+                    if (other !== container) {
+                        other.classList.remove('flipped');
+                        const otherId = other.dataset.id;
+                        const otherVideo = document.getElementById(`iphone-video-${otherId}`);
+                        otherVideo.pause();
+                        otherVideo.currentTime = 0;
+                    }
+                });
+
+                if (isFlipped) {
+                    container.classList.remove('flipped');
+                    video.pause();
+                    overlay.style.display = 'none';
+                } else {
+                    container.classList.add('flipped');
+                    overlay.style.display = 'block';
+                    setTimeout(() => {
+                        video.play().catch(e => console.log("Auto-play prevented:", e));
+                    }, 800);
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!container.contains(e.target)) {
+                    container.classList.remove('flipped');
+                    video.pause();
+                    video.currentTime = 0;
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+
+        // Pause videos when window is resized to prevent issues
+        window.addEventListener('resize', function() {
+            iphoneContainers.forEach(container => {
+                const id = container.dataset.id;
+                const video = document.getElementById(`iphone-video-${id}`);
+                if (!container.classList.contains('flipped')) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+        });
+    </script>
+    <!-- Footer Section -->
+<footer style="background-color: #111; color: white; padding: 60px 20px 20px;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+      
+      <!-- Logo & Tagline -->
+      <div style="flex: 1; min-width: 250px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="logo.png" alt="Being a Dot Logo" style="height: 40px;">
+          <h2 style="font-size: 1.5em; margin: 0;">Being a Dot</h2>
         </div>
-    </section>
-                
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Get In <span class="text-gradient">Touch</span></h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's discuss your project</p>
-            
-            <div class="contact-container">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <a href="mailto:beingadot@gmail.com">beingadot@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <a href="https://wa.me/7564024877?text=I'm%20interested%20in%your%20Designing%20Service">+91 756 402 4877</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Ranchi, JH India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Working Hours</h3>
-                            <p>Monday - Friday: 9am - 5pm IST</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/being_a_dot?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/akshat-kumar-100942341/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.behance.net/beingadot"><i class="fab fa-behance"></i></a>
-                        <a href="https://dribbble.com/beingadot"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option value="YouTube Thumbnails">YouTube Thumbnails</option>
-                                <option value="Reels Thumbnails">Reels Thumbnails</option>
-                                <option value="Flyers & Banners">Flyers & Banners</option>
-                                <option value="Posters">Posters</option>
-                                <option value="Logos & Branding">Logos & Branding</option>
-                                <option value="Social Media Kits">Social Media Kits</option>
-                                <option value="Other">Other</option>
-                                </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Project Details</label>
-                                    <textarea id="message" class="form-control" required></textarea>
-                                </div>
-                                
-                                <button type="submit" class="btn btn-pulse form-submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-                        
-            <!-- WhatsApp Float -->
-            <a href="https://wa.me/7564024877" class="whatsapp-float" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-                        
-            <!-- Scroll To Top -->
-            <div class="scroll-top" id="scrollTop">
-                <i class="fas fa-arrow-up"></i>
-            </div>
-                        
-            <!-- Footer -->
-            <footer>
-                <div class="container">
-                    <div class="footer-content">
-                        <a href="#" class="footer-logo">BEING<span>ADOT</span></a>
-                        
-                        <ul class="footer-links">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#reels">Reels</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                        
-                        <div class="footer-social">
-                            <a href="https://www.instagram.com/being_a_dot?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/akshat-kumar-100942341/"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://www.behance.net/beingadot"><i class="fab fa-behance"></i></a>
-                            <a href="https://dribbble.com/beingadot"><i class="fab fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="copyright">
-                        &copy; 2024 Being A Dot. All Rights Reserved.
-                    </div>
-                </div>
-            </footer>
-                        
-            <!-- Scripts -->
-            <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script src="script.js"></script>
+        <p style="color: #aaa; font-size: 14px; margin-top: 10px;">Designing stories, not just visuals.</p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div style="flex: 1; min-width: 200px;">
+        <h3 style="font-size: 18px; margin-bottom: 12px;">Quick Links</h3>
+        <ul style="list-style: none; padding: 0; color: #ccc; font-size: 14px;">
+          <li><a href="#home" style="color: inherit; text-decoration: none;">Home</a></li>
+          <li><a href="#canvas" style="color: inherit; text-decoration: none;">Creative Canvas</a></li>
+          <li><a href="#reels" style="color: inherit; text-decoration: none;">Reels</a></li>
+          <li><a href="#contact" style="color: inherit; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact Info -->
+      <div style="flex: 1; min-width: 250px;">
+        <h3 style="font-size: 18px; margin-bottom: 12px;">Let’s Connect</h3>
+        <p style="color: #aaa; font-size: 14px; margin-bottom: 6px;">Ranchi, Jharkhand<br>India</p>
+        <p style="color: #aaa; font-size: 14px; margin-bottom: 6px;">
+          📞 <a href="https://wa.me/7564024877" target="_blank" style="color: #ccc; text-decoration: none;">WhatsApp Me</a>
+        </p>
+        <p style="color: #aaa; font-size: 14px;">📧 beingadot@gmail.com</p>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div style="border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 12px; color: #666;">
+      © 2025 Being a Dot. All rights reserved.
+    </div>
+  </footer>
+  
+</body>
+</html>
