@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Official Devotional Partner — Shree Khatu Shyam Ji</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1c0b02, #070404);
+      color: #f5e6c8;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
+      url("https://images.unsplash.com/photo-1602278048248-e8a1f558ae1f") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero-box {
+      max-width: 900px;
+      background: rgba(10,5,3,0.75);
+      border: 1px solid rgba(255,215,140,.18);
+      padding: 50px 35px;
+      border-radius: 22px;
+      box-shadow: 0 0 80px rgba(255,180,60,.15);
+    }
+
+    /* ===== BABA IMAGE SECTION ===== */
+    .baba-wrapper {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 40px;
+      border-radius: 22px;
+      padding: 12px;
+      background: radial-gradient(circle, #ffce7a, #8a4f00);
+      box-shadow: 0 0 40px rgba(255,190,80,.5);
+    }
+
+    .baba-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background: black;
+    }
+
+    .baba-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Flower mala border effect */
+    .baba-wrapper::before {
+      content: "🌸 🌼 🌺 🌼 🌸 🌼 🌺 🌼 🌸";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    /* ===== AARTI DIYA ANIMATION ===== */
+    .diya {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background: radial-gradient(circle, #ffd36a 30%, orange 70%);
+      border-radius: 50%;
+      box-shadow: 0 0 20px orange, 0 0 40px red;
+      top: 50%;
+      left: 50%;
+      transform-origin: -110px center;
+      animation: aarti 8s linear infinite;
+    }
+
+    @keyframes aarti {
+      from {
+        transform: rotate(0deg) translateX(120px);
+      }
+      to {
+        transform: rotate(360deg) translateX(120px);
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #ffcc80, #ffb300);
+      color: #2b1400;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .6px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 18px 0;
+      color: #ffddb0;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #ffe9c9;
+    }
+
+    .pledge {
+      margin-top: 30px;
+      background: linear-gradient(180deg, #261203, #120702);
+      border: 2px dashed rgba(255,200,120,.4);
+      padding: 28px 22px;
+      border-radius: 18px;
+      font-size: 20px;
+      box-shadow: inset 0 0 40px rgba(0,0,0,.6);
+    }
+
+    .section {
+      padding: 90px 22px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 14px;
+      color: #ffd998;
+    }
+
+    .section p {
+      max-width: 820px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #f2dcb8;
+    }
+
+    .image-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 26px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .img-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,215,140,.18);
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.85));
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #ffddb0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 55px 20px;
+      background: linear-gradient(180deg, #080402, #030000);
+      font-size: 14px;
+      color: #d6b88a;
+    }
+
+    .gold {
+      color: #ffd27d;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-box">
+
+    <!-- ✅ BABA SHYAM IMAGE WITH MOVING DIYA -->
+    <div class="baba-wrapper">
+      <div class="baba-frame">
+        <img src="shyambaba.jpg" alt="Shree Khatu Shyam Ji">
+      </div>
+      <div class="diya"></div>
+    </div>
+
+    <div class="tag">OFFICIAL DEVOTIONAL PARTNER</div>
+
+    <h1>Shree Khatu Shyam Ji — Khatu Dham, Rajasthan</h1>
+
+    <p>
+      This page represents a sacred devotional commitment.  
+      A spiritual bond of gratitude, faith, discipline, and service.
+    </p>
+
+    <div class="pledge">
+      <span class="gold">10% of the FINAL NET PROFIT</span><br>
+      is humbly dedicated each year<br>
+      <span class="gold">to Shree Khatu Shyam Ji</span><br><br>
+      through <span class="gold">Temple Contribution</span> or  
+      <span class="gold">Charitable Service</span> for humanity.
+    </div>
+
+  </div>
+</section>
+
+<!-- PURPOSE -->
+<section class="section">
+  <h2>Purpose of the Devotional Offering</h2>
+  <p>
+    This dedication is rooted in timeless values of seva, daan, and dharma.  
+    The offering is intended for food donation, education support, healthcare help, and spiritual service.
+  </p>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2>Divine Inspiration</h2>
+  <div class="image-grid">
+    <div class="img-card"><img src="krishna.png"></div>
+    <div class="img-card"><img src="krishna.png"></div>
+    <div class="img-card"><img src="krishna.png"></div>
+    <div class="img-card"><img src="krishna.png"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  This webpage is a <span class="gold">devotional spiritual showcase</span> only.  
+  No legal document, business identity, financial data, or personal information is presented here.  
+  <br><br>
+  “Hare Ka Sahara, Baba Shyam Hamara”
+</footer>
+
+</body>
+</html>
